@@ -1,0 +1,58 @@
+version: "3.3"
+
+services:
+  db:
+    # For MAC M1
+    platform: linux/x86_64
+
+    image: mysql
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: Meni1971
+      MYSQL_DATABASE: megasport_db
+      MYSQL_USER: megasport_user
+      MYSQL_PASSWORD: Meni1971
+      #MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - megasport-data:/var/lib/mysql
+    networks:
+      - megasport-net
+  pma:
+    depends_on:
+      - db
+
+    # For MAC M1
+    platform: linux/x86_64
+    
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8088:80
+    restart: on-failure
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: Meni1971
+    networks:
+      - megasport-net
+  wp:
+    depends_on:
+      - db
+    build: .
+    volumes:
+      - ./wp:/var/www/html
+    ports:
+      - 8080:80
+    restart: on-failure
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: megasport_user
+      WORDPRESS_DB_PASSWORD: Meni1971
+      WORDPRESS_DB_NAME: megasport_db
+      XDEBUG_PORT: 9003
+      XDEBUG_IDEKEY: VSCode
+      WORDPRESS_DEBUG: 1
+    networks:
+      - megasport-net
+networks:
+  megasport-net:
+volumes:
+  megasport-data:
