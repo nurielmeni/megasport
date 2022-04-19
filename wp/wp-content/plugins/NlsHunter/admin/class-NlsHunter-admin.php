@@ -1,4 +1,6 @@
 <?php
+// Set the Modul customizer options
+include_once NLS__PLUGIN_PATH . '/includes/customizer/customizerAdjustments.php';
 
 /**
  * The admin-specific functionality of the plugin.

@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-03-22 00:17+0200\n"
-"PO-Revision-Date: 2022-03-22 00:17+0200\n"
+"POT-Creation-Date: 2022-04-19 16:14+0300\n"
+"PO-Revision-Date: 2022-04-19 16:19+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: NlsHunter.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: admin/class-NlsHunter-admin.php:157
+#: admin/class-NlsHunter-admin.php:163
 msgid "You do not have sufficient permissions to access this page."
 msgstr "אין לך הרשאות מספיקות כדי לגשת לעמוד זה."
 
-#: includes/Hunter/NlsHelper.php:102
+#: includes/Hunter/NlsHelper.php:100
 msgid "Select"
 msgstr "בחר"
 
@@ -40,56 +40,154 @@ msgstr "אין אפשרות ליצור מודל."
 msgid "Error: NlsHunter_model: "
 msgstr "שגיאה: NlsHunterFbf_model: "
 
-#: includes/class-NlsHunter-model.php:165
+#: includes/class-NlsHunter-model.php:177
+#: includes/class-NlsHunter-model.php:181
 msgid "Could not init Card Services."
 msgstr "אין אפשרות להתחבר לשירותי Card"
 
-#: includes/class-NlsHunter-model.php:166
+#: includes/class-NlsHunter-model.php:178
+#: includes/class-NlsHunter-model.php:182
 msgid "Error: Card Services: "
 msgstr "שגיאה: שירותי כרטיס"
 
-#: includes/class-NlsHunter-model.php:185
+#: includes/class-NlsHunter-model.php:202
+#: includes/class-NlsHunter-model.php:205
 msgid "Could not init Directory Services."
 msgstr "אין אפשרות להתחבר לשירותי Directory"
 
-#: includes/class-NlsHunter-model.php:186
+#: includes/class-NlsHunter-model.php:203
 msgid "Error: Directory Services: "
 msgstr "שגיאה: שירותי מדריך"
 
-#: includes/class-NlsHunter-model.php:205
+#: includes/class-NlsHunter-model.php:224
+#: includes/class-NlsHunter-model.php:228
 msgid "Could not init Search Services."
 msgstr "אין אפשרות להתחבר לשירותי Search"
 
-#: includes/class-NlsHunter-model.php:206
+#: includes/class-NlsHunter-model.php:225
+#: includes/class-NlsHunter-model.php:229
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: public/class-NlsHunter-public.php:164
+#: includes/customizer/customizerAdjustments.php:23
+msgid "Niloos"
+msgstr "נילוס"
+
+#: includes/customizer/customizerAdjustments.php:24
+msgid "Niloos Module Settings"
+msgstr "הגדרות מודול נילוס"
+
+#: includes/customizer/customizerNiloosOptions.php:9
+#: includes/customizer/customizerNiloosOptions.php:10
+msgid "Niloos Options"
+msgstr "אפשרויות נילוס"
+
+#: includes/customizer/customizerNiloosOptions.php:23
+msgid "Set Jobs pre page"
+msgstr "קבע מספר משרות בדף"
+
+#: includes/customizer/customizerNiloosSetings.php:9
+msgid "Niloos Settings - service"
+msgstr "הגדרת שירותי נילוס"
+
+#: includes/customizer/customizerNiloosSetings.php:10
+msgid "Settings Niloos Services"
+msgstr "הגדרת שירותי נילוס"
+
+#: includes/customizer/customizerNiloosSetings.php:23
+msgid "Set WSDL for directory service"
+msgstr "קבע WSDL עבור שירות DIRECTORY"
+
+#: includes/customizer/customizerNiloosSetings.php:38
+msgid "Set WSDL for cards service"
+msgstr "קבע WSDL עבור שירות CARDS"
+
+#: includes/customizer/customizerNiloosSetings.php:53
+msgid "Set WSDL for security service"
+msgstr "קבע WSDL עבור שירות SECURITY"
+
+#: includes/customizer/customizerNiloosSetings.php:68
+msgid "Set WSDL for search service"
+msgstr "קבע WSDL עבור שירות SEARCH"
+
+#: includes/customizer/headerLogo.php:16
+msgid "Header ML logo"
+msgstr ""
+
+#: includes/customizer/headerLogo.php:17
+msgid "Settings for header multilanguage logo"
+msgstr ""
+
+#: includes/customizer/headerLogo.php:31
+msgid "Header ML Logo"
+msgstr ""
+
+#: includes/customizer/nlsFlow.php:16
+msgid "Flow Element - "
+msgstr "אלמנט זרימה - "
+
+#: includes/customizer/nlsFlow.php:17 includes/customizer/nlsFlow.php:67
+msgid "Settings for the flow elements"
+msgstr "הגדרות עבור מרכיב זרימה"
+
+#: includes/customizer/nlsFlow.php:34
+msgid "Title"
+msgstr "כותרת"
+
+#: includes/customizer/nlsFlow.php:53
+msgid "Content"
+msgstr "תוכן"
+
+#: includes/customizer/nlsFlow.php:66
+msgid "Niloos FBF Flow - General"
+msgstr "זרימה - כללי"
+
+#: includes/customizer/nlsFlow.php:84
+msgid "Separator Image"
+msgstr "תמונת מפריד"
+
+#: includes/customizer/nlsFlow.php:100
+msgid "Separetor image width (px)"
+msgstr "רוחב תמונת מפריד"
+
+#: includes/customizer/nlsFooterLogo.php:13
+msgid "Niloos FBF footer logo"
+msgstr ""
+
+#: includes/customizer/nlsFooterLogo.php:14
+msgid "Settings for footer logo"
+msgstr ""
+
+#: includes/customizer/nlsFooterLogo.php:28
+msgid "Footer Logo"
+msgstr "לוגו פוטר"
+
+#: public/class-NlsHunter-public.php:165
 msgid "Supplier Id"
 msgstr "מזהה ספק"
 
-#: public/class-NlsHunter-public.php:165
+#: public/class-NlsHunter-public.php:166
 msgid "Job Code"
 msgstr "קוד משרה"
 
-#: public/class-NlsHunter-public.php:167 templates/applyForJobs.php:17
+#: public/class-NlsHunter-public.php:168 templates/applyForJobs.php:17
 #: templates/job/jobApplyForm.php:11
 msgid "Full Name"
 msgstr "שם החבר:"
 
-#: public/class-NlsHunter-public.php:168 templates/job/jobApplyForm.php:20
+#: public/class-NlsHunter-public.php:169 templates/job/jobApplyForm.php:21
 msgid "Phone"
 msgstr "טלפון"
 
-#: public/class-NlsHunter-public.php:169 templates/job/jobApplyForm.php:29
+#: public/class-NlsHunter-public.php:170 templates/job/jobApplyForm.php:30
 msgid "Email"
 msgstr "מייל חברה"
 
-#: public/class-NlsHunter-public.php:379
+#: public/class-NlsHunter-public.php:387
 msgid "Applicant form data: "
 msgstr "פרטי החבר/ה שלי:"
 
-#: public/class-NlsHunter-public.php:403
+#: public/class-NlsHunter-public.php:416
 msgid "CV Applied from Reichman Jobs Fair Site"
 msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
@@ -151,19 +249,24 @@ msgstr "לעמוד המעסיק"
 msgid "Employers List"
 msgstr "רשימת מעסיקים"
 
+#: templates/form/nlsFileField.php:19 templates/form/nlsInputField.php:21
+#: templates/form/nlsSelectField.php:21
+msgid "Not required"
+msgstr "לא חובה"
+
 #: templates/job/jobApplyForm.php:2
 msgid "Submit Application"
 msgstr "הגשת מועמדות"
 
-#: templates/job/jobApplyForm.php:36
+#: templates/job/jobApplyForm.php:37
 msgid "Upload CV"
 msgstr "העלאת קובץ קו”ח"
 
-#: templates/job/jobApplyForm.php:38
+#: templates/job/jobApplyForm.php:39
 msgid "Select file"
 msgstr "בחר קובץ"
 
-#: templates/job/jobApplyForm.php:45
+#: templates/job/jobApplyForm.php:46
 msgid "Send"
 msgstr "שלח"
 
@@ -226,11 +329,6 @@ msgstr "הפרטים נקלטו בהצלחה"
 #: templates/mail/mailSuccess.php:7
 msgid "Back"
 msgstr "חזור"
-
-#: templates/nlsFileField.php:19 templates/nlsInputField.php:20
-#: templates/nlsSelectField.php:21
-msgid "Not required"
-msgstr "לא חובה"
 
 #. Plugin Name of the plugin/theme
 #, fuzzy
