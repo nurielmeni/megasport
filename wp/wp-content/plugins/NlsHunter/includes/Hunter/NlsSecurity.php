@@ -88,6 +88,13 @@ class NlsSecurity
         }
     }
 
+    public function nls_auth_error_admin_notice()
+    {
+        echo '<div class="notice notice-error is-dismissible">
+                    <p>Auth error, could not connect to Niloos Services</p>
+                </div>';
+    }
+
     /**
      * Checks if the app is authenticated and the auth is valid (not expired)
      * if not valid Authenticates
@@ -99,13 +106,13 @@ class NlsSecurity
         $this->auth = json_decode(get_option(NlsService::AUTH_KEY));
         try {
             if (!$this->auth || property_exists($this->auth, 'faultcode') || $this->auth->Authenticate2Result != "Success") {
-                add_action('admin_notices', 'general_admin_notice');
+                add_action('admin_notices', [$this, 'nls_auth_error_admin_notice']);
                 $this->auth = false;
                 return false;
             }
             $expTime = \DateTime::createFromFormat("d/m/Y H:i:s", explode("^^^^", $this->auth->UsernameToken)[1]);
             if ($expTime->getTimestamp() < time()) {
-                add_action('admin_notices', 'general_admin_notice');
+                add_action('admin_notices', [$this, 'nls_auth_error_admin_notice']);
                 $this->auth = false;
                 return false;
             }

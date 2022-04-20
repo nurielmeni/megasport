@@ -19,6 +19,29 @@ function add_flow_element_item_section($wp_customize, $panel, $index)
   ]);
 
   /**
+   * Add the Flow element image
+   */
+  $wp_customize->add_setting('setting_nls_flow_element_field_image_' . $index, array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  /**
+   * Add the Flow element image
+   */
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'control_nls_flow_element_field_image_' . $index,
+      array(
+        'label' => __('Image', 'NlsHunter'),
+        'section' => $section->id,
+        'settings' => 'setting_nls_flow_element_field_image_' . $index,
+      )
+    )
+  );
+
+  /**
    * Add the Flow element title
    */
   $wp_customize->add_setting('nls_flow_element_field_title_' . $index, array(
@@ -40,7 +63,7 @@ function add_flow_element_item_section($wp_customize, $panel, $index)
   /**
    * Add the Flow element content
    */
-  $wp_customize->add_setting('nls_flow_element_field_content_' . $index, array(
+  $wp_customize->add_setting('nls_flow_element_field_subtitle_' . $index, array(
     'default' => '',
     'type' => 'theme_mod',
     'sanitize_callback' => 'our_sanitize_function',
@@ -49,10 +72,10 @@ function add_flow_element_item_section($wp_customize, $panel, $index)
   /**
    * Add the Flow element content
    */
-  $wp_customize->add_control('nls_flow_element_field_content_' . $index, array(
-    'label' => __('Content', 'NlsHunter'),
+  $wp_customize->add_control('nls_flow_element_field_subtitle_' . $index, array(
+    'label' => __('Subtitle', 'NlsHunter'),
     'section' => $section->id,
-    'settings' => 'nls_flow_element_field_content_' . $index,
+    'settings' => 'nls_flow_element_field_subtitle_' . $index,
     'type' => 'text'
   ));
 }
@@ -116,13 +139,14 @@ function nls_fbf_flow($atts)
   $separete_image = get_theme_mod('nls_flow_element_separete_image');
   $image_size = get_theme_mod('nls_flow_element_media_image_size');
 
-  $html = '<section class="nls-fbf-flow-wrapper nls-main-row">';
+  $html = '<section class="nls-fbf-flow-wrapper flex flex-col md:flex-row justify-center items-center w-full max-w-full bg-primary text-white -mx-4 my-8">';
 
   for ($index = 1; $index <= $numberElements; $index++) {
+    $image = get_theme_mod('setting_nls_flow_element_field_image_' . $index);
     $title = get_theme_mod('nls_flow_element_field_title_' . $index);
-    $content = get_theme_mod('nls_flow_element_field_content_' . $index);
+    $subtitle = get_theme_mod('nls_flow_element_field_subtitle_' . $index);
 
-    $html .= elementDesign($title, $content);
+    $html .= elementDesign($image, $title, $subtitle);
     $html .= $index < $numberElements ? '<img width="' . $image_size . '" src="' . $separete_image . '" role="presentation" />' : '';
   }
 
@@ -131,11 +155,12 @@ function nls_fbf_flow($atts)
   return $html;
 }
 
-function elementDesign($title, $content)
+function elementDesign($image, $title, $subtitle)
 {
-  $html =  '<div class="flow-element-card">';
-  $html .= ' <h3 class="flow-element-title">' . $title . '</h3>';
-  $html .= ' <p class="flow-element-content">' . $content . '</p>';
+  $html =  '<div class="flow-element-card flex flex-col justify-center items-center min-w-flow">';
+  $html .= ' <img class="flow-element-image" src="' . $image . '" role="presentation" />';
+  $html .= ' <h3 class="flow-element-title font-bold text-lg">' . $title . '</h3>';
+  $html .= ' <p class="flow-element-subtitle text-lg">' . $subtitle . '</p>';
   $html .= '</div>';
 
   return $html;

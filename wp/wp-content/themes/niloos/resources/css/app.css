@@ -3,3 +3,7 @@
 @import "tailwindcss/utilities";
 
 @import "custom.css";
+
+/* .entry-content > .max-w-full {
+  max-width: 100%;
+} */

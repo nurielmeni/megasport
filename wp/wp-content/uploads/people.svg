@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85">
+    <g data-name="Group 27">
+        <g data-name="Group 18">
+            <g data-name="Group 17">
+                <path data-name="Path 18" d="M 69.6 57.1 a 8.2 8.2 0 1 0 7.8 8.2 a 8 8 0 0 0 -7.8 -8.2 z" transform="translate(-35.5,-31.2)" style="fill: none; stroke: #feffff; stroke-width: 2px"/>
+            </g>
+        </g>
+        <g data-name="Group 20">
+            <g data-name="Group 19">
+                <path data-name="Path 19" d="M 294.3 71.3 h -0.1 a 6.4 6.4 0 0 0 -4.7 2.1 a 7.4 7.4 0 0 0 0.1 9.9 a 6.4 6.4 0 0 0 4.7 2.1 h 0.1 a 6.4 6.4 0 0 0 4.7 -2.1 a 7.2 7.2 0 0 0 1.9 -5 a 6.9 6.9 0 0 0 -6.7 -7 z" transform="translate(-242.5,-44.2)" style="fill: none; stroke: #feffff; stroke-width: 2px"/>
+            </g>
+        </g>
+        <g data-name="Group 22">
+            <g data-name="Group 21">
+                <path data-name="Path 20" d="M 278.4 257.4 h -0.6 a 11.6 11.6 0 0 0 -7.8 3 a 15 15 0 0 1 5.9 11.1 h 14.3 v -2.5 a 11.7 11.7 0 0 0 -11.7 -11.7 z" transform="translate(-226.3,-214.7)" style="fill: none; stroke: #feffff; stroke-width: 2px"/>
+            </g>
+        </g>
+        <g data-name="Group 24">
+            <g data-name="Group 23">
+                <path data-name="Path 21" d="M 25.8 298 a 12.5 12.5 0 0 0 -12.5 -11.7 h -0.8 A 12.5 12.5 0 0 0 0 298.8 v 1.5 h 25.8 v -1.5 q 0 -0.4 0 -0.8 z" transform="translate(21.2,-241.3)" style="fill: none; stroke: #feffff; stroke-width: 2px"/>
+            </g>
+        </g>
+        <g data-name="Group 7">
+            <g data-name="Ellipse 3" style="fill: none; stroke: #feffff">
+                <circle cx="42.5" cy="42.5" r="42.5" style="stroke: none"/>
+                <circle cx="42.5" cy="42.5" r="42" style="fill: none"/>
+            </g>
+        </g>
+    </g>
+</svg>

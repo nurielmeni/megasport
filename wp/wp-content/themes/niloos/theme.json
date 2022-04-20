@@ -2,15 +2,14 @@
   "version": 1,
   "settings": {
     "layout": {
-      "contentSize": "960px",
-      "wideSize": "1280px"
+      "contentSize": "100%"
     },
     "color": {
       "palette": [
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#0EA5E9"
+          "color": "#083a81"
         },
         {
           "name": "Secondary",
@@ -25,7 +24,7 @@
         {
           "name": "Light",
           "slug": "light",
-          "color": "#F9FAFB"
+          "color": "#f4f4f4"
         }
       ]
     },

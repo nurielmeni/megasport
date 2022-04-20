@@ -53,8 +53,8 @@ class NlsHunter_model
 
             // Check if Auth is OK and convert to object
             if ($this->nlsSecutity->isAuth() === false) {
-                $this->nlsAdminNotice('Authentication Error', 'Can not connect to Niloos Service.');
-                $this->nlsPublicNotice('Authentication Error', 'Can not connect to Niloos Service.');
+                //$this->nlsAdminNotice('Authentication Error', 'Can not connect to Niloos Service.');
+                //$this->nlsPublicNotice('Authentication Error', 'Can not connect to Niloos Service.');
             }
         }
 
