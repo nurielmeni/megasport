@@ -958,11 +958,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1009,6 +1004,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pl-11 {
@@ -1293,8 +1296,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 figure.desktop > img,
 figure.mobile > img {
   min-height: 470px;
+  max-height: 470px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.wp-block-cover.slogen {
+  margin-top: 116px !important;
+  margin-bottom: 116px !important;
 }
 
 .container {
@@ -1307,6 +1316,13 @@ figure.hidden {
   display: none !important;
 }
 
+@media (min-width: 470px) {
+  figure.mobile > img {
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+}
+
 @media (min-width: 782px) {
   figure.md\:hidden {
     display: none !important;
@@ -1314,6 +1330,13 @@ figure.hidden {
 
   figure.md\:block {
     display: block !important;
+  }
+}
+
+@media (min-width: 1366px) {
+  figure.desktop > img {
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 }
 

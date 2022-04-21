@@ -11,7 +11,13 @@
 figure.desktop > img,
 figure.mobile > img {
   min-height: 470px;
+  max-height: 470px;
   object-fit: cover;
+}
+
+.wp-block-cover.slogen {
+  margin-top: 116px !important;
+  margin-bottom: 116px !important;
 }
 
 .container {
@@ -24,6 +30,12 @@ figure.hidden {
   display: none !important;
 }
 
+@media (min-width: 470px) {
+  figure.mobile > img {
+    object-fit: fill;
+  }
+}
+
 @media (min-width: 782px) {
   figure.md\:hidden {
     display: none !important;
@@ -33,5 +45,11 @@ figure.hidden {
 @media (min-width: 782px) {
   figure.md\:block {
     display: block !important;
+  }
+}
+
+@media (min-width: 1366px) {
+  figure.desktop > img {
+    object-fit: fill;
   }
 }

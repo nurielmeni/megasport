@@ -139,7 +139,7 @@ function nls_fbf_flow($atts)
   $separete_image = get_theme_mod('nls_flow_element_separete_image');
   $image_size = get_theme_mod('nls_flow_element_media_image_size');
 
-  $html = '<section class="nls-fbf-flow-wrapper alignfull flex flex-col md:flex-row justify-center items-center bg-primary text-white py-8 gap-8 md:gap-3 lg:gap-8">';
+  $html = '<section class="nls-fbf-flow-wrapper alignfull flex flex-col md:flex-row justify-center items-center bg-primary text-white pt-12 pb-8 gap-8 md:gap-3 lg:gap-8">';
 
   for ($index = 1; $index <= $numberElements; $index++) {
     $image = get_theme_mod('setting_nls_flow_element_field_image_' . $index);
