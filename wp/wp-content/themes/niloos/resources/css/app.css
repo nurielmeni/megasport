@@ -7,3 +7,31 @@
 /* .entry-content > .max-w-full {
   max-width: 100%;
 } */
+
+figure.desktop > img,
+figure.mobile > img {
+  min-height: 470px;
+  object-fit: cover;
+}
+
+.container {
+  padding: 0 !important;
+  max-width: 100% !important;
+  width: 100vw !important;
+}
+
+figure.hidden {
+  display: none !important;
+}
+
+@media (min-width: 782px) {
+  figure.md\:hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 782px) {
+  figure.md\:block {
+    display: block !important;
+  }
+}
