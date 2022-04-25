@@ -16,7 +16,7 @@ function add_niloos_options_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('setting_nls_job_count', array(
     'default' => 20,
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('control_nls_job_count', array(

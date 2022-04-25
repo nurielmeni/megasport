@@ -23,7 +23,7 @@ function add_flow_element_item_section($wp_customize, $panel, $index)
    */
   $wp_customize->add_setting('setting_nls_flow_element_field_image_' . $index, array(
     'default' => '',
-    'type' => 'theme_mod'
+    'type' => 'option'
   ));
 
   /**
@@ -46,7 +46,7 @@ function add_flow_element_item_section($wp_customize, $panel, $index)
    */
   $wp_customize->add_setting('nls_flow_element_field_title_' . $index, array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
     'sanitize_callback' => 'our_sanitize_function',
   ));
 
@@ -65,7 +65,7 @@ function add_flow_element_item_section($wp_customize, $panel, $index)
    */
   $wp_customize->add_setting('nls_flow_element_field_subtitle_' . $index, array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
     'sanitize_callback' => 'our_sanitize_function',
   ));
 
@@ -96,7 +96,7 @@ function add_flow_elements_general_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('nls_flow_element_separete_image', array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control(
@@ -116,7 +116,7 @@ function add_flow_elements_general_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('nls_flow_element_media_image_size', array(
     'default' => 42,
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('nls_flow_element_media_image_size', array(

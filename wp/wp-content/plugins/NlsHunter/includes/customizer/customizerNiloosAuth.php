@@ -16,7 +16,7 @@ function add_niloos_auth_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('setting_nls_domain', array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('control_nls_domain', array(
@@ -31,7 +31,7 @@ function add_niloos_auth_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('setting_nls_user', array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('control_nls_user', array(
@@ -46,7 +46,7 @@ function add_niloos_auth_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('setting_nls_password', array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('control_nls_password', array(

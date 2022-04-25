@@ -16,7 +16,7 @@ function add_niloos_application_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('setting_nls_consumer', array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('control_nls_consumer', array(
@@ -31,7 +31,7 @@ function add_niloos_application_section($wp_customize, $panel)
    */
   $wp_customize->add_setting('setting_nls_supplier_id', array(
     'default' => '',
-    'type' => 'theme_mod',
+    'type' => 'option',
   ));
 
   $wp_customize->add_control('control_nls_supplier_id', array(
@@ -46,7 +46,7 @@ function add_niloos_application_section($wp_customize, $panel)
    */
   // $wp_customize->add_setting('setting_nls_hot_supplier_id', array(
   //   'default' => '',
-  //   'type' => 'theme_mod',
+  //   'type' => 'option',
   // ));
 
   // $wp_customize->add_control('control_nls_hot_supplier_id', array(

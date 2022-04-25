@@ -1,5 +1,7 @@
 <?php
 include_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
+// Set the Modul customizer options
+include_once NLS__PLUGIN_PATH . '/includes/customizer/customizerAdjustments.php';
 
 /**
  * The public-facing functionality of the plugin.

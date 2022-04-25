@@ -15,7 +15,7 @@ class NlsSecurity
      */
     public function __construct()
     {
-        $this->url = get_option(NlsHunter_Admin::SECURITY_WSDL_URL);
+        $this->url = get_option('setting_nls_security_service');
     }
 
     /**
