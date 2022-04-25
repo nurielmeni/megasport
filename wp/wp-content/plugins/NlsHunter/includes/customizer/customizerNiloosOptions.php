@@ -6,8 +6,8 @@ function add_niloos_options_section($wp_customize, $panel)
    * Add the new Niloos section
    */
   $section = $wp_customize->add_section('nls_more_options', [
-    'title' => __('Niloos Options', 'NlsHunter'),
-    'description' => __('Niloos Options', 'NlsHunter'),
+    'title' => __('Options', 'NlsHunter'),
+    'description' => __('Options', 'NlsHunter'),
     'panel' => $panel
   ]);
 

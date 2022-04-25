@@ -6,8 +6,8 @@ function add_niloos_settings_section($wp_customize, $panel)
    * Add the new Niloos section
    */
   $section = $wp_customize->add_section('nls_settings_service', [
-    'title' => __('Niloos Settings - service', 'NlsHunter'),
-    'description' => __('Settings Niloos Services', 'NlsHunter'),
+    'title' => __('Services - WSDL', 'NlsHunter'),
+    'description' => __('Niloos WSDL services', 'NlsHunter'),
     'panel' => $panel
   ]);
 
@@ -23,7 +23,7 @@ function add_niloos_settings_section($wp_customize, $panel)
     'label' => __('Set WSDL for directory service', 'NlsHunter'),
     'section' => $section->id,
     'settings' => 'setting_nls_directory_service',
-    'type' => 'text'
+    'type' => 'url'
   ));
 
   /**
@@ -38,7 +38,7 @@ function add_niloos_settings_section($wp_customize, $panel)
     'label' => __('Set WSDL for cards service', 'NlsHunter'),
     'section' => $section->id,
     'settings' => 'setting_nls_cards_service',
-    'type' => 'text'
+    'type' => 'url'
   ));
 
   /**
@@ -53,7 +53,7 @@ function add_niloos_settings_section($wp_customize, $panel)
     'label' => __('Set WSDL for security service', 'NlsHunter'),
     'section' => $section->id,
     'settings' => 'setting_nls_security_service',
-    'type' => 'text'
+    'type' => 'url'
   ));
 
   /**
@@ -68,6 +68,6 @@ function add_niloos_settings_section($wp_customize, $panel)
     'label' => __('Set WSDL for search service', 'NlsHunter'),
     'section' => $section->id,
     'settings' => 'setting_nls_search_service',
-    'type' => 'text'
+    'type' => 'url'
   ));
 }

@@ -13,11 +13,13 @@ figure.mobile > img {
   min-height: 470px;
   max-height: 470px;
   object-fit: cover;
+  max-width: 100vw !important;
+  width: 100vw;
 }
 
 .wp-block-cover.slogen {
-  margin-top: 116px !important;
-  margin-bottom: 116px !important;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .container {
@@ -40,9 +42,12 @@ figure.hidden {
   figure.md\:hidden {
     display: none !important;
   }
-}
 
-@media (min-width: 782px) {
+  .wp-block-cover.slogen {
+    margin-top: 107px;
+    margin-bottom: 107px;
+  }
+
   figure.md\:block {
     display: block !important;
   }
