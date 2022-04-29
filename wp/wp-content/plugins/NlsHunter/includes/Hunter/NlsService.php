@@ -46,16 +46,20 @@ class NlsService
 
     public $langCode;
 
+    protected $nlsConfig;
+
     /**
      * 
      * @param type $config the $auth and $settings
      */
     public function __construct($config = array(), $chachAuth = true)
     {
+        $this->nlsConfig = new NlsConfig;
+
         if ($chachAuth && key_exists('auth', $config) && $config['auth'] !== null) {
             $this->auth = $config['auth'];
         } else {
-            $nlsSecurity = new NlsSecurity();
+            $nlsSecurity = new NlsSecurity($this->nlsConfig);
             $this->auth = $nlsSecurity->isAuth();
         }
         $this->soap_headers = [

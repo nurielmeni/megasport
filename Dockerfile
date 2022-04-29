@@ -21,9 +21,9 @@ RUN echo "apc.enable=1" > /usr/local/etc/php/php.ini
 
 
 # add plugins
-COPY ./niloos/plugins/* /var/www/html/wp-content/plugins/
+#COPY ./niloos/plugins/* /var/www/html/wp-content/plugins/
 
 # add themes
-COPY ./niloos/themes/* /var/www/html/wp-content/themes/
+#COPY ./niloos/themes/* /var/www/html/wp-content/themes/
 
 

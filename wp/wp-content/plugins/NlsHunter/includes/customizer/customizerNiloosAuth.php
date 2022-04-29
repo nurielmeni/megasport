@@ -1,4 +1,5 @@
 <?php
+include_once NLS__PLUGIN_PATH . '/includes/Hunter/NlsConfig.php';
 
 function add_niloos_auth_section($wp_customize, $panel)
 {
@@ -14,45 +15,45 @@ function add_niloos_auth_section($wp_customize, $panel)
   /**
    * Add the Domain
    */
-  $wp_customize->add_setting('setting_nls_domain', array(
+  $wp_customize->add_setting('setting_' . NlsConfig::NLS_DOMAIN, array(
     'default' => '',
     'type' => 'option',
   ));
 
-  $wp_customize->add_control('control_nls_domain', array(
+  $wp_customize->add_control('control_' . NlsConfig::NLS_DOMAIN, array(
     'label' => __('Domain', 'NlsHunter'),
     'section' => $section->id,
-    'settings' => 'setting_nls_domain',
+    'settings' => 'setting_' . NlsConfig::NLS_DOMAIN,
     'type' => 'text'
   ));
 
   /**
    * Add the User
    */
-  $wp_customize->add_setting('setting_nls_user', array(
+  $wp_customize->add_setting('setting_' . NlsConfig::NLS_USER, array(
     'default' => '',
     'type' => 'option',
   ));
 
-  $wp_customize->add_control('control_nls_user', array(
+  $wp_customize->add_control('control_' . NlsConfig::NLS_USER, array(
     'label' => __('User', 'NlsHunter'),
     'section' => $section->id,
-    'settings' => 'setting_nls_user',
+    'settings' => 'setting_' . NlsConfig::NLS_USER,
     'type' => 'text'
   ));
 
   /**
    * Add the User
    */
-  $wp_customize->add_setting('setting_nls_password', array(
+  $wp_customize->add_setting('setting_' . NlsConfig::NLS_PASSWORD, array(
     'default' => '',
     'type' => 'option',
   ));
 
-  $wp_customize->add_control('control_nls_password', array(
+  $wp_customize->add_control('control_' . NlsConfig::NLS_PASSWORD, array(
     'label' => __('Password', 'NlsHunter'),
     'section' => $section->id,
-    'settings' => 'setting_nls_password',
+    'settings' => 'setting_' . NlsConfig::NLS_PASSWORD,
     'type' => 'text'
   ));
 }

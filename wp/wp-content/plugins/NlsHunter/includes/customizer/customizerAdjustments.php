@@ -1,13 +1,10 @@
 <?php
+include_once NLS__PLUGIN_PATH . '/includes/Hunter/NlsConfig.php';
 include_once 'nlsFlow.php';
 include_once 'customizerNiloosSetings.php';
 include_once 'customizerNiloosOptions.php';
 include_once 'customizerNiloosApplication.php';
 include_once 'customizerNiloosAuth.php';
-
-const NLS_FLOW_ELEMENTS = 3;
-
-//include_once 'headerLogo.php';
 
 /**
  * Customize the theme customizer
@@ -56,7 +53,7 @@ function niloos_customizer_additions($wp_customize)
   /**
    * Add the Flow elements sections
    */
-  for ($i = 1; $i <= NLS_FLOW_ELEMENTS; $i++) {
+  for ($i = 1; $i <= NlsConfig::NLS_FLOW_ELEMENTS; $i++) {
     add_flow_element_item_section($wp_customize, $flowPanel->id, $i);
   }
 }

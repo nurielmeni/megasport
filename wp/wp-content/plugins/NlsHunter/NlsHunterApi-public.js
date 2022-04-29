@@ -113,10 +113,6 @@
       searchBy(searchByValue);
     }
 
-    $('button.prevent').on('click', function(e) {
-      e.preventDefault();
-    });
-
     $("form.nls-search .nls-btn.search.options").on("click", function (e) {
       e.preventDefault();
       if ($(this).hasClass("active")) return false;

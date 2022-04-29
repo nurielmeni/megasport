@@ -3,24 +3,10 @@
     Author     : nurielmeni
 */
 :root {
-  --nls-text-primary: #002952;
-  --nls-bg-primary: #002952;
-  --nls-placeholder: #7f94a8;
-}
-
-.underline > a {
-  text-decoration: underline;
+  --form-bg : #f4f4f4;
 }
 
 /** Sumo Select */
-.nls-hunter-search-wrapper .SumoSelect {
-  width: 198px;
-}
-
-.job-apply-form-wrapper .SumoSelect {
-  width: 11rem;
-}
-
 .SumoSelect.open > .CaptionCont,
 .SumoSelect:focus > .CaptionCont,
 .SumoSelect:focus-visible > .CaptionCont,
@@ -48,7 +34,7 @@
 
 .select.sumo .SumoSelect > .CaptionCont,
 .select.sumo .SumoSelect.open .search-txt {
-  border-radius: 12px;
+  border-radius: 0.375rem;
 }
 
 .nls-hunter-search-wrapper .SumoSelect.open > .optWrapper {
@@ -58,21 +44,32 @@
   top: 41px !important;
 }
 
-.SumoSelect > .CaptionCont > span.placeholder {
-  color: var(--nls-placeholder) !important;
+.nls-apply-for-jobs .friends-details .form-body .friend {
+  border-top: 3px solid #e5e7eb;
+  position: relative;
+  margin-top: 60px;
+  padding-top: 50px;
 }
 
-@media (max-width: 1279.9px) {
-  .nls-hunter-search-wrapper .SumoSelect {
-    width: 229px;
-  }
+.nls-apply-for-jobs .friends-details .form-body .friend:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-@media (max-width: 540px) {
-  .nls-field.select {
-    width: 100%;
-  }
-  .SumoSelect {
-    width: 100%;
-  }
+.nls-apply-for-jobs .friends-details .form-body .friend span.remove {
+  position: absolute;
+  background-image: url("../images/trash-can.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--form-bg);
+  top: -30px;
+  left: calc(50% - 30px);
+  cursor: pointer;
+}
+
+.nls-apply-for-jobs .friends-details .form-body .friend:first-child span.remove {
+  display: none;
 }

@@ -25,14 +25,14 @@ class NlsSearch extends NlsService
      */
     public function init()
     {
-        $this->url = get_option(NlsHunter_Admin::SEARCH_WSDL_URL);
+        $this->url = $this->nlsConfig->getNlsSearchService();
         parent::init();
     }
 
 
     public function JobHuntersGetForUser()
     {
-        $transactionCode = Helper::newGuid();
+        $transactionCode = NlsHelper::newGuid();
         try {
             $params = array(
                 "transactionCode" => $transactionCode,
@@ -54,11 +54,11 @@ class NlsSearch extends NlsService
     public function JobHunterCreateOrUpdate($user_name, $filter, $hunterStatus)
     {
 
-        $transactionCode = Helper::newGuid();
+        $transactionCode = NlsHelper::newGuid();
         $hunter_id = null;
         try {
 
-            $hunter_id = Helper::newGuid();
+            $hunter_id = NlsHelper::newGuid();
             $params = array(
                 "transactionCode" => $transactionCode,
                 "hunterId" => $hunter_id,
@@ -86,7 +86,7 @@ class NlsSearch extends NlsService
     {
 
 
-        $transactionCode = Helper::newGuid();
+        $transactionCode = NlsHelper::newGuid();
         try {
 
 
@@ -109,8 +109,8 @@ class NlsSearch extends NlsService
 
     public function applicantHunterExecuteNewQuery2($hunter_id, $from, $ofset, $filter)
     {
-        $transactionCode = Helper::newGuid();
-        $hunter_id = Helper::newGuid();
+        $transactionCode = NlsHelper::newGuid();
+        $hunter_id = NlsHelper::newGuid();
         try {
             $params = array(
                 "transactionCode" => $transactionCode,
@@ -150,7 +150,7 @@ class NlsSearch extends NlsService
 
     public function AutomaticHunterConfirmReset($hunter_id)
     {
-        $transactionCode = Helper::newGuid();
+        $transactionCode = NlsHelper::newGuid();
         try {
             $params = array(
                 "transactionCode" => $transactionCode,

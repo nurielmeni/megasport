@@ -25,7 +25,7 @@ class NlsCards extends NlsService
      */
     public function init()
     {
-        $this->url = get_option(NlsHunter_Admin::CARDS_WSDL_URL);
+        $this->url = $this->nlsConfig->getNlsCardsService();
         parent::init();
     }
 
@@ -74,7 +74,7 @@ class NlsCards extends NlsService
                 $params = [
                     "TransactionCode" => $transactionCode,
                     "CountryCode" => "IS",
-                    "SupplierId" => NlsHunter_Admin::NSOFT_SUPPLIER_ID,
+                    "SupplierId" => $this->nlsConfig->getNlsSupplierId(),
                     "LanguageId" => NlsHelper::languageCode(),
                     "fInfo" => [
                         "CardId" => $cardId,
@@ -789,10 +789,7 @@ class NlsCards extends NlsService
             $this->jobFilterSort("UpdateDate", "Descending"),
             $this->jobFilterSort("JobCode", "Ascending"),
         );
-        # Supplier
-        // The supplier Id is not required here (looking for a specific job)
-        //$this->jobFilterEntry($filter, get_option(NlsHunter_Admin::NSOFT_SUPPLIER_ID), "SupplierId");
-        # jobCode
+
         $this->jobFilterEntry($filter, $jobCode, "JobCode");
 
         $params = array(

@@ -126,7 +126,6 @@ class NlsHunter
 
 		$this->define_admin_hooks();
 		$this->define_shortcodes();
-		//$this->add_fbf_widget();
 		$this->define_public_hooks();
 
 		/**
@@ -257,10 +256,6 @@ class NlsHunter
 		// THE AJAX APPLY CV ADD ACTIONS
 		$this->loader->add_action('wp_ajax_apply_cv_function', $plugin_public, 'apply_cv_function');
 		$this->loader->add_action('wp_ajax_nopriv_apply_cv_function', $plugin_public, 'apply_cv_function'); // need this to serve non logged in users
-		$this->loader->add_action('wp_ajax_load_employers_function', $plugin_public, 'load_employers_function');
-		$this->loader->add_action('wp_ajax_nopriv_load_employers_function', $plugin_public, 'load_employers_function'); // need this to serve non logged in users
-		$this->loader->add_action('wp_ajax_load_jobs_function', $plugin_public, 'load_jobs_function');
-		$this->loader->add_action('wp_ajax_nopriv_load_jobs_function', $plugin_public, 'load_jobs_function'); // need this to serve non logged in users
 	}
 
 	/**
@@ -272,10 +267,7 @@ class NlsHunter
 	private function define_shortcodes()
 	{
 		// Add Shortcode
-		add_shortcode('nls_hunter_employers', [$this->modules, 'nlsHunterEmployers_render']);
-		add_shortcode('nls_hunter_employer_details', [$this->modules, 'nlsHunterEmployerDetails_render']);
-		add_shortcode('nls_hunter_job_details', [$this->modules, 'nlsHunterJobDetails_render']);
-		add_shortcode('nls_hunter_all_jobs', [$this->modules, 'nlsHunterAllJobs_render']);
+		add_shortcode('nls_application_form', [$this->modules, 'nlsApplicationForm_render']);
 	}
 
 	/**

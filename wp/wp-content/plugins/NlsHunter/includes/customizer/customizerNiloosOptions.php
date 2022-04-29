@@ -1,4 +1,5 @@
 <?php
+include_once NLS__PLUGIN_PATH . '/includes/Hunter/NlsConfig.php';
 
 function add_niloos_options_section($wp_customize, $panel)
 {
@@ -12,17 +13,32 @@ function add_niloos_options_section($wp_customize, $panel)
   ]);
 
   /**
-   * Add the Directory Service Setting
+   * Add the Jobs Count
    */
-  $wp_customize->add_setting('setting_nls_job_count', array(
+  $wp_customize->add_setting('setting_' . NlsConfig::NLS_JOBS_COUNT, array(
     'default' => 20,
     'type' => 'option',
   ));
 
-  $wp_customize->add_control('control_nls_job_count', array(
-    'label' => __('Set Jobs pre page', 'NlsHunter'),
+  $wp_customize->add_control('control_' . NlsConfig::NLS_JOBS_COUNT, array(
+    'label' => __('Jobs per page', 'NlsHunter'),
     'section' => $section->id,
-    'settings' => 'setting_nls_job_count',
+    'settings' => 'setting_' . NlsConfig::NLS_JOBS_COUNT,
+    'type' => 'number'
+  ));
+
+  /**
+   * Add the Hot Jobs Count
+   */
+  $wp_customize->add_setting('setting_' . NlsConfig::NLS_HOT_JOBS_COUNT, array(
+    'default' => 6,
+    'type' => 'option',
+  ));
+
+  $wp_customize->add_control('control_' . NlsConfig::NLS_HOT_JOBS_COUNT, array(
+    'label' => __('Hot Jobs Count', 'NlsHunter'),
+    'section' => $section->id,
+    'settings' => 'setting_' . NlsConfig::NLS_HOT_JOBS_COUNT,
     'type' => 'number'
   ));
 }

@@ -70,7 +70,7 @@
 				-->
 		</header>
 
-		<div id="content" class="site-content flex-grow">
+		<div id="content" class="site-content flex-grow bg-light">
 
 			<?php do_action('tailpress_content_start'); ?>
 

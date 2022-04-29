@@ -1,3 +1,7 @@
+<?php
+include_once NLS__PLUGIN_PATH . '/includes/public/class-ApplicantDetails.php.php';
+?>
+
 <html lang="he">
 
 <head>
@@ -81,11 +85,11 @@
     <div id="nls-wrapper">
         <h1><?= __('Applied CV from Jobs Site', 'NlsHunter') ?></h1>
         <table>
-            <?php foreach ($fields as $field) : ?>
-                <?php if (is_array($field['value']) || !empty($field['value'])) : ?>
+            <?php foreach ($fields as $key => $field) : ?>
+                <?php if (!empty($field)) : ?>
                     <tr>
-                        <td class="label"><strong><?= $field['label'] ?></strong></td>
-                        <td class="value"><?= is_array($field['value']) ? $field['value'][$i] : $field['value'] ?></td>
+                        <td class="label"><strong><?= ApplicationDetails::propertyLabel($key) ?></strong></td>
+                        <td class="value"><?= $field ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>

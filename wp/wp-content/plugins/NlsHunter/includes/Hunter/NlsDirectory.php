@@ -25,7 +25,7 @@ class NlsDirectory extends NlsService
      */
     public function init()
     {
-        $this->url = get_option(NlsHunter_Admin::DIRECTORY_WSDL_URL);
+        $this->url = $this->nlsConfig->getNlsDirectoryService();
         parent::init();
     }
 

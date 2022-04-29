@@ -1,4 +1,5 @@
 <?php
+include_once 'Hunter/NlsConfig.php';
 require_once 'Hunter/NlsCards.php';
 require_once 'Hunter/NlsSecurity.php';
 require_once 'Hunter/NlsDirectory.php';
@@ -21,8 +22,8 @@ class NlsHunter_model
     private $nlsDirectory;
     private $supplierId;
 
-    private $countPerPage = 10;
-    private $countHotJobs = 6;
+    private $nlsConfig;
+
     private $nlsFlashCache  = true;
     private $nlsCacheTime  = 20 * 60;
 
@@ -30,8 +31,9 @@ class NlsHunter_model
 
     public function __construct()
     {
+        $this->nlsConfig = new NlsConfig;
         try {
-            $this->nlsSecutity = new NlsSecurity();
+            $this->nlsSecutity = new NlsSecurity($this->nlsConfig);
         } catch (\Exception $e) {
             $this->nlsAdminNotice(
                 __('Could not create Model.', 'NlsHunter'),
@@ -40,15 +42,13 @@ class NlsHunter_model
             return null;
         }
         $this->auth = $this->nlsSecutity->isAuth();
-        $this->countPerPage = get_option(NlsHunter_Admin::NLS_JOBS_COUNT, 10);
-        $this->countHotJobs = get_option(NlsHunter_Admin::NLS_HOT_JOBS_COUNT, 6);
-        $this->nlsFlashCache = strlen(get_option(NlsHunter_Admin::NLS_FLASH_CACHE, "")) > 0;
-        $this->nlsCacheTime = intval(get_option(NlsHunter_Admin::NLS_CACHE_TIME, 20)) * 60;
-        $this->supplierId = $this->queryParam('sid', get_option(NlsHunter_Admin::NSOFT_SUPPLIER_ID));
+        $this->nlsFlashCache = true;
+        $this->nlsCacheTime = 20 * 60;
+        $this->supplierId = $this->queryParam('sid', $this->nlsConfig->getNlsSupplierId());
 
         if (!$this->auth) {
-            $username = get_option(NlsHunter_Admin::NLS_SECURITY_USERNAME);
-            $password = get_option(NlsHunter_Admin::NLS_SECURITY_PASSWORD);
+            $username = $this->nlsConfig->getNlsUser();
+            $password = $this->nlsConfig->getNlsPassword();
             $this->auth = $this->nlsSecutity->authenticate($username, $password);
 
             // Check if Auth is OK and convert to object
@@ -76,34 +76,9 @@ class NlsHunter_model
         return isset($_GET[$param]) ? $_GET[$param] : $default;
     }
 
-    public function getHunterEmployerDetailsPageUrl($id = false)
-    {
-        $language = get_bloginfo('language');
-        $hunterEmployerDetailsPageId = $language === 'he-IL' ?
-            get_option(NlsHunter_Admin::NLS_HUNTER_EMPLOYER_DETAILS_HE) :
-            get_option(NlsHunter_Admin::NLS_HUNTER_EMPLOYER_DETAILS_EN);
-        $hunterEmployerDetailsPageUrl = get_page_link($hunterEmployerDetailsPageId);
-        return $id ? $hunterEmployerDetailsPageUrl . '?employer-id=' . $id : $hunterEmployerDetailsPageUrl;
-    }
-
-    public function getHunterJobDetailsPageUrl($jobCode = false)
-    {
-        $language = get_bloginfo('language');
-        $hunterJobDetailsPageId = $language === 'he-IL' ?
-            get_option(NlsHunter_Admin::NLS_HUNTER_JOB_DETAILS_HE) :
-            get_option(NlsHunter_Admin::NLS_HUNTER_JOB_DETAILS_EN);
-        $hunterJobDetailsPageUrl = get_page_link($hunterJobDetailsPageId);
-        return $jobCode ? $hunterJobDetailsPageUrl . '?job-code=' . $jobCode : $hunterJobDetailsPageUrl;
-    }
-
     public function nlsGetSupplierId()
     {
         return $this->supplierId;
-    }
-
-    public function nlsGetCountPerPage()
-    {
-        return intval($this->countPerPage);
     }
 
     public function front_add_message()
@@ -360,124 +335,17 @@ class NlsHunter_model
         return is_array($regions) ? $regions : [];
     }
 
-    /**
-     * Uses the card service to get jobs (depricted)
-     * The search is noe done by Search service (getJobHunterExecuteNewQuery2)
-     */
-    public function getJobsGetByFilter($searchParams, $lastId, $sendToAgent = false)
-    {
-        $this->initCardService();
-
-        if (!is_array($searchParams)) return [];
-
-        $jobs = $this->nlsCards->jobsGetByFilter([
-            'keywords' => key_exists('keywords', $searchParams) ? $searchParams['keywords'] : '',
-            'categoryId' => key_exists('categoryIds', $searchParams) ? $searchParams['categoryIds'] : [],
-            'regionValue' => key_exists('regionValues', $searchParams) ? $searchParams['regionValues'] : [],
-            'employmentType' => key_exists('employmentTypes', $searchParams) ? $searchParams['employmentTypes'] : [],
-            'jobScope' => key_exists('jobScopes', $searchParams) ? $searchParams['jobScopes'] : [],
-            'jobLocation' => key_exists('jobLocations', $searchParams) ? $searchParams['jobLocations'] : [],
-            'employerId' => key_exists('employerId', $searchParams) ? $searchParams['employerId'] : '',
-            'updateDate' => key_exists('updateDate', $searchParams) ? $searchParams['updateDate'] : '',
-            'supplierId' => $this->nlsGetSupplierId(),
-            'lastId' => $lastId,
-            'countPerPage' => $this->nlsGetCountPerPage(),
-            'status' => self::STATUS_OPEN,
-            'sendToAgent' => $sendToAgent
-        ]);
-
-        return $jobs;
-    }
-
     public function getHotJobs($professionalFields)
     {
         $searchParams = is_array($professionalFields) ? ['' => $professionalFields] : [];
 
-        $res =  $this->getJobHunterExecuteNewQuery2($searchParams, null, 0, $this->countHotJobs);
+        $res =  $this->getJobHunterExecuteNewQuery2($searchParams, null, 0, NlsConfig::NLS_HOT_JOBS_COUNT);
         return $res['list'];
-    }
-
-    public function getEmployers($page = null, $searchPhrase = '')
-    {
-        $searchPhrase = trim($searchPhrase);
-        $cache_key = 'nls_hunter_employers_' . get_bloginfo('language');
-        if ($this->nlsFlashCache) wp_cache_delete($cache_key);
-
-        $employers = wp_cache_get($cache_key);
-        if (false === $employers) {
-            $employers = [];
-            $jobs = $this->getJobHunterExecuteNewQuery2([], null, 0, 10000);
-            foreach ($jobs['list'] as $job) {
-                if (property_exists($job, 'EmployerId') && $job->EmployerId !== null) {
-                    $data['EmployerEntityTypeCode'] = $job->EmployerEntityTypeCode;
-                    $data['EmployerName'] = $job->EmployerName;
-                    $data['EmployerPartyUtilizerId'] = $job->EmployerPartyUtilizerId;
-                    $data['LogoPath'] = $job->LogoPath;
-
-                    $employers[$job->EmployerId] = (object) $data;
-                }
-            }
-
-            wp_cache_set($cache_key, $employers, '', $this->nlsCacheTime);
-        }
-        if ($page !== null && is_int($page)) {
-            $window = intval(get_option(NlsHunter_Admin::NLS_EMPLOYERS_COUNT, 1));
-            if (strlen($searchPhrase) > 0) {
-                $employers = array_filter($employers, function ($employer) use ($searchPhrase) {
-                    return stripos($employer->EmployerName, $searchPhrase) !== false;
-                });
-            }
-            return array_slice($employers, $page * $window, $window);
-        }
-        return $employers;
-    }
-
-    public function getEmployerData($employerId)
-    {
-        $employers = $this->getEmployers();
-        if (!is_array($employers)) return null;
-        return key_exists($employerId, $employers) ? $employers[$employerId] : null;
-    }
-
-    public function getEmployerProperties($employerId, $full = false)
-    {
-        $properties = null;
-        $employerData = $this->getEmployerData($employerId);
-        if ($full) {
-            $res = $this->employerGet($employerId);
-            $employer = $res && property_exists($res, 'EmployerGetResult') ? $res->EmployerGetResult : null;
-            $fileList = $this->filesListGet($employerId);
-
-            // Set the Employer Data needed
-            $properties['generalDescription'] = $employer->GeneralDescription;
-            $properties['webSite'] = strlen($employer->WebSite) > 0 && strpos($employer->WebSite, 'http') !== 0 ? "http://$employer->WebSite" : $employer->WebSite;
-
-            $properties['videoUrl'] = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
-
-            $properties['images'] = [
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-                ['src' => plugins_url('NlsHunter/public/images') . '/apply@3x.png', 'alt' => 'apply'],
-            ];
-        }
-
-        if ($employerData) {
-            $properties['id'] = $employerId;
-            $properties['logo'] = $employerData->LogoPath !== null ? $employerData->LogoPath : $this->getDefaultLogo();
-            $properties['name'] = $employerData->EmployerName;
-        }
-
-        return $properties;
     }
 
     public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
     {
-        $resultRowLimit = $resultRowLimit ? $resultRowLimit : $this->nlsGetCountPerPage();
+        $resultRowLimit = $resultRowLimit ? $resultRowLimit : $this->nlsConfig->getNlsJobsCount();
         $resultRowOffset = is_int($page) ? $page * $resultRowLimit : 0;
         $region = key_exists('Region', $searchParams) ? $searchParams['Region'] : 0;
         $employer = key_exists('EmployerId', $searchParams) ? $searchParams['EmployerId'] : 0;
@@ -574,10 +442,16 @@ class NlsHunter_model
         return $applicantCvList;
     }
 
-    public function employerGet($employerId)
+    public function listItemsToSelectOptions($list, $id, $value)
     {
-        if (!$this->initCardService()) return [];
+        $options = [];
+        if (!$list || !is_array($list) || !$id || !$value) return $options;
 
-        return $this->nlsCards->employerGet($employerId);
+        foreach ($list as  $key => $item) {
+            if (!is_object($item) || !property_exists($item, $id) || !property_exists($item, $value)) continue;
+            $options[] = ['id' => trim($item->$id), 'value' => trim($item->$value)];
+        }
+
+        return $options;
     }
 }

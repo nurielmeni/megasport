@@ -72,7 +72,7 @@ class NlsHelper
             if (count($r->children()) == 0) {
                 $arr[$r->getName()] = strval($r);
             } else {
-                $arr[$r->getName()][] = xml2array($r);
+                $arr[$r->getName()][] = self::xml2array($r);
             }
         }
         return $arr;

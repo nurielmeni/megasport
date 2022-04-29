@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-04-19 16:19+0300\n"
-"PO-Revision-Date: 2022-04-20 10:30+0300\n"
+"POT-Creation-Date: 2022-04-29 02:13+0300\n"
+"PO-Revision-Date: 2022-04-29 02:15+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -26,281 +26,263 @@ msgstr ""
 msgid "You do not have sufficient permissions to access this page."
 msgstr "אין לך הרשאות מספיקות כדי לגשת לעמוד זה."
 
-#: includes/Hunter/NlsHelper.php:100
+#: includes/Hunter/NlsHelper.php:100 templates/applyForJobs.php:39
 msgid "Select"
 msgstr "בחר"
 
-#: includes/class-NlsHunter-model.php:37
+#: includes/class-NlsHunter-model.php:39
 msgid "Could not create Model."
 msgstr "אין אפשרות ליצור מודל."
 
-#: includes/class-NlsHunter-model.php:38
+#: includes/class-NlsHunter-model.php:40
 #, fuzzy
 #| msgid "Error: NlsHunterFbf_model: "
 msgid "Error: NlsHunter_model: "
 msgstr "שגיאה: NlsHunterFbf_model: "
 
-#: includes/class-NlsHunter-model.php:177
-#: includes/class-NlsHunter-model.php:181
+#: includes/class-NlsHunter-model.php:152
+#: includes/class-NlsHunter-model.php:156
 msgid "Could not init Card Services."
 msgstr "אין אפשרות להתחבר לשירותי Card"
 
-#: includes/class-NlsHunter-model.php:178
-#: includes/class-NlsHunter-model.php:182
+#: includes/class-NlsHunter-model.php:153
+#: includes/class-NlsHunter-model.php:157
 msgid "Error: Card Services: "
 msgstr "שגיאה: שירותי כרטיס"
 
-#: includes/class-NlsHunter-model.php:202
-#: includes/class-NlsHunter-model.php:205
+#: includes/class-NlsHunter-model.php:177
+#: includes/class-NlsHunter-model.php:180
 msgid "Could not init Directory Services."
 msgstr "אין אפשרות להתחבר לשירותי Directory"
 
-#: includes/class-NlsHunter-model.php:203
+#: includes/class-NlsHunter-model.php:178
 msgid "Error: Directory Services: "
 msgstr "שגיאה: שירותי מדריך"
 
-#: includes/class-NlsHunter-model.php:224
-#: includes/class-NlsHunter-model.php:228
+#: includes/class-NlsHunter-model.php:199
+#: includes/class-NlsHunter-model.php:203
 msgid "Could not init Search Services."
 msgstr "אין אפשרות להתחבר לשירותי Search"
 
-#: includes/class-NlsHunter-model.php:225
-#: includes/class-NlsHunter-model.php:229
+#: includes/class-NlsHunter-model.php:200
+#: includes/class-NlsHunter-model.php:204
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: includes/customizer/customizerAdjustments.php:23
+#: includes/customizer/customizerAdjustments.php:22
 msgid "Niloos"
 msgstr "נילוס"
 
-#: includes/customizer/customizerAdjustments.php:24
+#: includes/customizer/customizerAdjustments.php:23
 msgid "Niloos Module Settings"
 msgstr "הגדרות מודול נילוס"
 
-#: includes/customizer/customizerNiloosOptions.php:9
+#: includes/customizer/customizerAdjustments.php:45
+msgid "Flow Widget"
+msgstr "ווידג׳ט זרימה"
+
+#: includes/customizer/customizerAdjustments.php:46
+msgid "Flow elemnets settings"
+msgstr "הגדרת אלמנט זרימה"
+
+#: includes/customizer/customizerNiloosApplication.php:10
+#: includes/customizer/customizerNiloosApplication.php:11
+msgid "Application"
+msgstr "אפליקציה"
+
+#: includes/customizer/customizerNiloosApplication.php:24
+msgid "Set the application consumer"
+msgstr "‫Consumer"
+
+#: includes/customizer/customizerNiloosApplication.php:39
+msgid "Set the application supplier ID"
+msgstr "‫Supplier ID"
+
+#: includes/customizer/customizerNiloosApplication.php:69
+msgid "Web Mail"
+msgstr "אימייל לשליחת פניות"
+
+#: includes/customizer/customizerNiloosApplication.php:84
+msgid "Bcc Mail"
+msgstr "עותק אימייל"
+
+#: includes/customizer/customizerNiloosAuth.php:10
+#: includes/customizer/customizerNiloosAuth.php:11
+msgid "Auth"
+msgstr "הזדהות"
+
+#: includes/customizer/customizerNiloosAuth.php:24
+msgid "Domain"
+msgstr "דומיין"
+
+#: includes/customizer/customizerNiloosAuth.php:39
+msgid "User"
+msgstr "משתמש"
+
+#: includes/customizer/customizerNiloosAuth.php:54
+msgid "Password"
+msgstr "סיסמה"
+
 #: includes/customizer/customizerNiloosOptions.php:10
-msgid "Niloos Options"
-msgstr "אפשרויות נילוס"
+#: includes/customizer/customizerNiloosOptions.php:11
+msgid "Options"
+msgstr "אפשרויות"
 
-#: includes/customizer/customizerNiloosOptions.php:23
-msgid "Set Jobs pre page"
-msgstr "קבע מספר משרות בדף"
+#: includes/customizer/customizerNiloosOptions.php:24
+msgid "Jobs per page"
+msgstr "מספר משרות בדף"
 
-#: includes/customizer/customizerNiloosSetings.php:9
-msgid "Niloos Settings - service"
-msgstr "הגדרת שירותי נילוס"
+#: includes/customizer/customizerNiloosOptions.php:39
+msgid "Hot Jobs Count"
+msgstr "מספר משרות חמות"
 
 #: includes/customizer/customizerNiloosSetings.php:10
-msgid "Settings Niloos Services"
-msgstr "הגדרת שירותי נילוס"
+msgid "Services - WSDL"
+msgstr "שירותים - WSDL"
 
-#: includes/customizer/customizerNiloosSetings.php:23
+#: includes/customizer/customizerNiloosSetings.php:11
+msgid "Niloos WSDL services"
+msgstr "שירותי נילוס - WSDL"
+
+#: includes/customizer/customizerNiloosSetings.php:24
 msgid "Set WSDL for directory service"
 msgstr "קבע WSDL עבור שירות DIRECTORY"
 
-#: includes/customizer/customizerNiloosSetings.php:38
+#: includes/customizer/customizerNiloosSetings.php:39
 msgid "Set WSDL for cards service"
 msgstr "קבע WSDL עבור שירות CARDS"
 
-#: includes/customizer/customizerNiloosSetings.php:53
+#: includes/customizer/customizerNiloosSetings.php:54
 msgid "Set WSDL for security service"
 msgstr "קבע WSDL עבור שירות SECURITY"
 
-#: includes/customizer/customizerNiloosSetings.php:68
+#: includes/customizer/customizerNiloosSetings.php:69
 msgid "Set WSDL for search service"
 msgstr "קבע WSDL עבור שירות SEARCH"
-
-#: includes/customizer/headerLogo.php:16
-msgid "Header ML logo"
-msgstr ""
-
-#: includes/customizer/headerLogo.php:17
-msgid "Settings for header multilanguage logo"
-msgstr ""
-
-#: includes/customizer/headerLogo.php:31
-msgid "Header ML Logo"
-msgstr ""
 
 #: includes/customizer/nlsFlow.php:16
 msgid "Flow Element - "
 msgstr "אלמנט זרימה - "
 
-#: includes/customizer/nlsFlow.php:17 includes/customizer/nlsFlow.php:67
+#: includes/customizer/nlsFlow.php:17 includes/customizer/nlsFlow.php:90
 msgid "Settings for the flow elements"
 msgstr "הגדרות עבור מרכיב זרימה"
 
-#: includes/customizer/nlsFlow.php:34
+#: includes/customizer/nlsFlow.php:37
+msgid "Image"
+msgstr "תמונה"
+
+#: includes/customizer/nlsFlow.php:57
 msgid "Title"
 msgstr "כותרת"
 
-#: includes/customizer/nlsFlow.php:53
-msgid "Content"
-msgstr "תוכן"
+#: includes/customizer/nlsFlow.php:76
+msgid "Subtitle"
+msgstr "כותרת משנה"
 
-#: includes/customizer/nlsFlow.php:66
+#: includes/customizer/nlsFlow.php:89
 msgid "Niloos FBF Flow - General"
 msgstr "זרימה - כללי"
 
-#: includes/customizer/nlsFlow.php:84
+#: includes/customizer/nlsFlow.php:107
 msgid "Separator Image"
 msgstr "תמונת מפריד"
 
-#: includes/customizer/nlsFlow.php:100
+#: includes/customizer/nlsFlow.php:123
 msgid "Separetor image width (px)"
 msgstr "רוחב תמונת מפריד"
 
-#: includes/customizer/nlsFooterLogo.php:13
-msgid "Niloos FBF footer logo"
-msgstr ""
-
-#: includes/customizer/nlsFooterLogo.php:14
-msgid "Settings for footer logo"
-msgstr ""
-
-#: includes/customizer/nlsFooterLogo.php:28
-msgid "Footer Logo"
-msgstr "לוגו פוטר"
-
-#: public/class-NlsHunter-public.php:165
+#: public/class-ApplicantDetails.php:26 public/class-NlsHunter-public.php:163
 msgid "Supplier Id"
 msgstr "מזהה ספק"
 
-#: public/class-NlsHunter-public.php:166
+#: public/class-ApplicantDetails.php:27 templates/applyForJobs.php:16
+msgid "Friend Name"
+msgstr "שם החבר"
+
+#: public/class-ApplicantDetails.php:28
+msgid "Friend Phone"
+msgstr "טלפון החבר"
+
+#: public/class-ApplicantDetails.php:29
+msgid "Friend Job Code"
+msgstr "קוד משרה לחבר"
+
+#: public/class-ApplicantDetails.php:30
+msgid "Employee Name"
+msgstr "שם עובד"
+
+#: public/class-ApplicantDetails.php:31
+msgid "Employee Phone"
+msgstr "טלפון עובד"
+
+#: public/class-ApplicantDetails.php:32
+msgid "Employee Id"
+msgstr "מס׳ זהות עובד"
+
+#: public/class-NlsHunter-public.php:164
 msgid "Job Code"
 msgstr "קוד משרה"
 
-#: public/class-NlsHunter-public.php:168 templates/applyForJobs.php:17
-#: templates/job/jobApplyForm.php:11
+#: public/class-NlsHunter-public.php:166 templates/applyForJobs.php:76
 msgid "Full Name"
-msgstr "שם החבר:"
+msgstr "שם מלא"
 
-#: public/class-NlsHunter-public.php:169 templates/job/jobApplyForm.php:21
+#: public/class-NlsHunter-public.php:167 templates/applyForJobs.php:27
 msgid "Phone"
 msgstr "טלפון"
 
-#: public/class-NlsHunter-public.php:170 templates/job/jobApplyForm.php:30
+#: public/class-NlsHunter-public.php:168
 msgid "Email"
 msgstr "מייל חברה"
 
-#: public/class-NlsHunter-public.php:387
+#: public/class-NlsHunter-public.php:334
 msgid "Applicant form data: "
-msgstr "פרטי החבר/ה שלי:"
+msgstr "פרטי החבר:"
 
-#: public/class-NlsHunter-public.php:416
+#: public/class-NlsHunter-public.php:363
 msgid "CV Applied from Reichman Jobs Fair Site"
 msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
-#: templates/applyForJobs.php:10
+#: templates/applyForJobs.php:6
 msgid "My friend details:"
-msgstr "פרטי החבר/ה שלי:"
+msgstr "פרטי החבר:"
 
-#: templates/applyForJobs.php:24
-msgid "Cell"
-msgstr "טלפון:"
+#: templates/applyForJobs.php:36
+msgid "Which Position?"
+msgstr "לאיזה תפקיד?"
 
-#: templates/applyForJobs.php:31
-msgid "Area"
-msgstr "מתגורר ב…"
-
-#: templates/applyForJobs.php:38
-msgid "What job?"
-msgstr "התפקיד שתפור עליו:"
-
-#: templates/applyForJobs.php:51
-msgid "Append CV File"
-msgstr "צירוף קורות חיים (רק למשרות מטה)"
-
-#: templates/applyForJobs.php:66
-msgid "My details:"
-msgstr "הפרטים שלי:"
-
-#: templates/applyForJobs.php:71
-msgid "My Name"
-msgstr "שמי:"
-
-#: templates/applyForJobs.php:78
-msgid "Employee ID"
-msgstr "מזהה מעסיק"
-
-#: templates/applyForJobs.php:85
-msgid "Company email"
-msgstr "אימייל פרטי:"
-
-#: templates/applyForJobs.php:97
-msgid "* By the terms"
-msgstr "* כפוף לתקנון"
-
-#: templates/employer/employerDescription.php:6
-msgid "Company Website:"
-msgstr "אתר החברה:"
-
-#: templates/employer/employerNotFound.php:3
-#, fuzzy
-#| msgid "Not Found: The requested Job Code was not found."
-msgid "Not Found: The requested Employer was not found."
-msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
-
-#: templates/employer/employerTitle.php:8
-msgid "To employer page"
-msgstr "לעמוד המעסיק"
-
-#: templates/employer/employersGrid.php:1
-msgid "Employers List"
-msgstr "רשימת מעסיקים"
-
-#: templates/form/nlsFileField.php:19 templates/form/nlsInputField.php:21
-#: templates/form/nlsSelectField.php:21
-msgid "Not required"
-msgstr "לא חובה"
-
-#: templates/job/jobApplyForm.php:2
-msgid "Submit Application"
-msgstr "הגשת מועמדות"
-
-#: templates/job/jobApplyForm.php:37
+#: templates/applyForJobs.php:48
 msgid "Upload CV"
 msgstr "העלאת קובץ קו”ח"
 
-#: templates/job/jobApplyForm.php:39
-msgid "Select file"
-msgstr "בחר קובץ"
+#: templates/applyForJobs.php:50
+msgid "Attach cv file (if availiable)"
+msgstr "צרף קורות חיים (במידה ויש)"
 
-#: templates/job/jobApplyForm.php:46
+#: templates/applyForJobs.php:61
+msgid "Another Friend"
+msgstr "עוד חבר"
+
+#: templates/applyForJobs.php:68
+msgid "My details:"
+msgstr "הפרטים שלי:"
+
+#: templates/applyForJobs.php:86
+msgid "Cell Phone"
+msgstr "מס׳ נייד"
+
+#: templates/applyForJobs.php:96
+msgid "ID"
+msgstr "מס׳ ת״ז"
+
+#: templates/applyForJobs.php:103
 msgid "Send"
 msgstr "שלח"
 
-#: templates/job/jobCardFooter.php:4
-msgid "More Details"
-msgstr "לפרטים נוספים"
-
-#: templates/job/jobList.php:4
-msgid "Open positions by area"
-msgstr "משרות פתוחות לפי תחום לימוד"
-
-#: templates/job/jobList.php:7
-msgid "Select Area"
-msgstr "בחר תחום לימוד"
-
-#: templates/job/jobList.php:12
-msgid "Open Positions"
-msgstr "משרות פתוחות"
-
-#: templates/job/jobNotFound.php:3
-msgid "Not Found: The requested Job Code was not found."
-msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
-
-#: templates/jobFairBanner.php:7
-msgid "All Fair Jobs"
-msgstr "לכל משרות היריד"
-
-#: templates/jobFairBanner.php:10
-msgid "Search By Employer"
-msgstr "חיפוש לפי מעסיק"
-
-#: templates/jobFairBanner.php:15
-msgid "Search"
-msgstr "חיפוש"
+#: templates/form/nlsInputField.php:22 templates/form/nlsSelectField.php:22
+msgid "Not required"
+msgstr "לא חובה"
 
 #: templates/mail/mailApply.php:82
 msgid "Applied CV from Jobs Site"
@@ -343,6 +325,80 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 #. Author of the plugin/theme
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
+
+#~ msgid "Submit Application"
+#~ msgstr "הגשת מועמדות"
+
+#~ msgid "Select file"
+#~ msgstr "בחר קובץ"
+
+#~ msgid "More Details"
+#~ msgstr "לפרטים נוספים"
+
+#~ msgid "Open positions by area"
+#~ msgstr "משרות פתוחות לפי תחום לימוד"
+
+#~ msgid "Select Area"
+#~ msgstr "בחר תחום לימוד"
+
+#~ msgid "Open Positions"
+#~ msgstr "משרות פתוחות"
+
+#~ msgid "Not Found: The requested Job Code was not found."
+#~ msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
+
+#~ msgid "All Fair Jobs"
+#~ msgstr "לכל משרות היריד"
+
+#~ msgid "Search By Employer"
+#~ msgstr "חיפוש לפי מעסיק"
+
+#~ msgid "Search"
+#~ msgstr "חיפוש"
+
+#~ msgid "Settings Niloos Services"
+#~ msgstr "הגדרת שירותי נילוס"
+
+#~ msgid "Content"
+#~ msgstr "תוכן"
+
+#~ msgid "Footer Logo"
+#~ msgstr "לוגו פוטר"
+
+#~ msgid "Cell"
+#~ msgstr "טלפון:"
+
+#~ msgid "Area"
+#~ msgstr "מתגורר ב…"
+
+#~ msgid "What job?"
+#~ msgstr "התפקיד שתפור עליו:"
+
+#~ msgid "Append CV File"
+#~ msgstr "צירוף קורות חיים (רק למשרות מטה)"
+
+#~ msgid "My Name"
+#~ msgstr "שמי:"
+
+#~ msgid "Company email"
+#~ msgstr "אימייל פרטי:"
+
+#~ msgid "* By the terms"
+#~ msgstr "* כפוף לתקנון"
+
+#~ msgid "Company Website:"
+#~ msgstr "אתר החברה:"
+
+#, fuzzy
+#~| msgid "Not Found: The requested Job Code was not found."
+#~ msgid "Not Found: The requested Employer was not found."
+#~ msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
+
+#~ msgid "To employer page"
+#~ msgstr "לעמוד המעסיק"
+
+#~ msgid "Employers List"
+#~ msgstr "רשימת מעסיקים"
 
 #~ msgid "CV File"
 #~ msgstr "קובץ קורות חיים"
@@ -406,9 +462,6 @@ msgstr "מני נוריאל"
 
 #~ msgid "Authentication Error"
 #~ msgstr "התרחשה שגיאת הזדהות"
-
-#~ msgid "Add another friend"
-#~ msgstr "עוד חבר"
 
 #~ msgid "Submit CV"
 #~ msgstr "שלח"

@@ -25,6 +25,16 @@
           "name": "Light",
           "slug": "light",
           "color": "#f4f4f4"
+        },
+        {
+          "name": "Success",
+          "slug": "success",
+          "color": "#419639"
+        },
+        {
+          "name": "Border",
+          "slug": "border",
+          "color": "#e5e7eb"
         }
       ]
     },
