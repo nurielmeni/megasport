@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('mb-12'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
 	<?php if (is_search() || is_archive()) : ?>

@@ -1,1 +1,1 @@
-<div class="hidden md:block"></div>
+<div class="hidden md:block border-t-2 border-slate-800 px-8 pt-8 md:px-16 mt-16 mb-0"></div>
