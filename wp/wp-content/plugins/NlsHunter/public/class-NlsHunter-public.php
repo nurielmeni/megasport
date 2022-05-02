@@ -226,7 +226,8 @@ class NlsHunter_Public
 
         $response = ['sent' => $applyCount];
         if ($applyCount > 0) {
-            $response['location'] = $this->getSubmitResultUrl();
+            //$response['location'] = $this->getSubmitResultUrl();
+            $response['html'] = $this->sentSuccess($applyCount);
         } else {
             $response['html'] = $this->sentError();
         }
