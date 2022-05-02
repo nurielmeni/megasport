@@ -82,7 +82,7 @@ class NlsHunter_Public
     private function getSubmitResultUrl()
     {
         $language = get_bloginfo('language');
-        return get_permalink(get_page_by_path($language === 'he-IL' ? 'submit-success-he' : 'submit-success', OBJECT, ['page']));
+        return get_permalink(get_page_by_path('submit-success', OBJECT, ['page']));
     }
 
     /**
