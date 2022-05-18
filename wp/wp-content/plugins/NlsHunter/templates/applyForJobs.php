@@ -53,7 +53,7 @@
                         'mode' => 'text',
                         'iconSrc' => plugins_url('NlsHunter/public/images/checkmark.png'),
                         'iconClass' => 'h-6 hidden',
-                        'validators' => ['required']
+                        'validators' => []
                     ]) ?>
                 </div>
             </div>
