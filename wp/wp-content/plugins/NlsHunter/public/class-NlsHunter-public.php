@@ -351,7 +351,7 @@ class NlsHunter_Public
         if (strlen($bcc) > 0) array_push($headers, 'Bcc: ' . $bcc);
 
         $subject = __('CV Applied from Mega Sport Jobs Site', 'NlsHunter') . ': ';
-        $subject .= $fields->friendJobcode ? $fields->friendJobcode : $msg;
+        $subject .= $fields->friendJobCode ? $fields->friendJobCode : $msg;
 
         $attachments = $files ?: [];
 
